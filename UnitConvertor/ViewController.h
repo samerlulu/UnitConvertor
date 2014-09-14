@@ -10,6 +10,11 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *txtAger;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblMoonAge;
+- (IBAction)btnCalc:(id)sender;
+
+-(void) clearKeyboard;
 @end
 

@@ -16,12 +16,37 @@
             
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    for(int i=1;i<=99;i++){
+        NSLog(@"%i cups\n",100-i);
+        if(i<=98)
+            NSLog(@"take 1 then still %i cups\n",100-i-1);
+        else
+                 NSLog(@"take 1 then no more cups\n");
+    }
+         NSLog(@"NO More cups go buy more\n buy more and have 99 cups ");
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
+- (IBAction)btnClear:(id)sender {
+    [self clearKeyboard];
+}
+
+- (IBAction)btnCalc:(id)sender {
+    float sunYear,moonYear;
+    sunYear=[self.txtAger.text floatValue];
+    moonYear=sunYear*365/360;
+    self.lblMoonAge.text=[NSString stringWithFormat:@"%f",moonYear];
+    [self clearKeyboard];}
+
+-(void) clearKeyboard{ [self.txtAger resignFirstResponder];}
+
+
+
 
 @end
